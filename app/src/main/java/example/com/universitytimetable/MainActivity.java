@@ -53,12 +53,19 @@ public class MainActivity extends AppCompatActivity {
         setRefreshListener();
     }
 
+
+    /**
+     * 初始化课程表
+     */
     private void initWeekCourseView() {
         for (int i = 0; i < mWeekViews.size(); i++) {
             initWeekPanel(mWeekViews.get(i), CourseDao.getCourseData()[i]);
         }
     }
 
+    /**
+     * 下拉刷新
+     */
     private void setRefreshListener() {
         mFreshLayout.setLoadMore(false);
         mFreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
@@ -184,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
 
             frameLayout.setLayoutParams(frameLp);
             frameLayout.addView(tv);
-            frameLayout.setPadding(1, 2, 1, 2);
+            frameLayout.setPadding(2, 2, 2, 2);
             ll.addView(frameLayout);
             firstCourse = courseModel;
             tv.setOnClickListener(new View.OnClickListener() {
